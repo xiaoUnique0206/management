@@ -13,6 +13,7 @@
                 <outlet property="nextBtn" destination="uyv-So-kX4" id="clZ-vt-sHB"/>
                 <outlet property="phoneTF" destination="Gp0-y6-KgY" id="eEz-3L-cuE"/>
                 <outlet property="pwdTF" destination="gW9-3G-RRx" id="F7i-gi-N2O"/>
+                <outlet property="regisLabel" destination="ma6-pP-YDE" id="Nf5-iI-A83"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -81,9 +82,16 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="立即注册 &gt;&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ma6-pP-YDE">
+                    <rect key="frame" x="285" y="570.5" width="79" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.098039215690000001" green="0.42352941179999998" blue="0.78039215689999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="ma6-pP-YDE" firstAttribute="top" secondItem="uyv-So-kX4" secondAttribute="bottom" constant="15" id="3xt-Ae-0gV"/>
                 <constraint firstItem="Gp0-y6-KgY" firstAttribute="top" secondItem="h95-2j-8Qd" secondAttribute="bottom" constant="50" id="5Lw-Nf-rN6"/>
                 <constraint firstItem="gW9-3G-RRx" firstAttribute="trailing" secondItem="Gp0-y6-KgY" secondAttribute="trailing" id="APP-TA-CmN"/>
                 <constraint firstItem="n3d-gv-BUa" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="80" id="Cag-m5-949"/>
@@ -93,6 +101,7 @@
                 <constraint firstItem="n3d-gv-BUa" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="60" id="JZV-C9-x6K"/>
                 <constraint firstItem="Z6E-m8-Bhw" firstAttribute="trailing" secondItem="gW9-3G-RRx" secondAttribute="trailing" id="MNM-Vf-j7o"/>
                 <constraint firstItem="Z6E-m8-Bhw" firstAttribute="top" secondItem="gW9-3G-RRx" secondAttribute="bottom" constant="0.5" id="MaS-z8-CIi"/>
+                <constraint firstItem="ma6-pP-YDE" firstAttribute="trailing" secondItem="uyv-So-kX4" secondAttribute="trailing" id="QHu-17-Zfa"/>
                 <constraint firstItem="brR-0H-mG5" firstAttribute="leading" secondItem="n3d-gv-BUa" secondAttribute="leading" id="T37-CV-kAv"/>
                 <constraint firstItem="Llg-Ra-e8f" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="65" id="VHs-Ch-wpx"/>
                 <constraint firstItem="h95-2j-8Qd" firstAttribute="top" secondItem="brR-0H-mG5" secondAttribute="bottom" constant="20" id="WUb-VJ-cSd"/>

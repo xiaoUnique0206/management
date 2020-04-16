@@ -34,6 +34,8 @@
 		6A72BF2C2435DA61002657B3 /* HMDetailAbnorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A72BF2B2435DA61002657B3 /* HMDetailAbnorViewController.m */; };
 		6A7455122444A031009FDF39 /* HMCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7455102444A031009FDF39 /* HMCodeViewController.m */; };
 		6A7455132444A031009FDF39 /* HMCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A7455112444A031009FDF39 /* HMCodeViewController.xib */; };
+		6A74551A24483224009FDF39 /* HMRetrievePassWordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A74551724483224009FDF39 /* HMRetrievePassWordViewController.m */; };
+		6A74551B24483224009FDF39 /* HMRetrievePassWordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A74551924483224009FDF39 /* HMRetrievePassWordViewController.xib */; };
 		6A87682124286C450077453E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A87682024286C450077453E /* AppDelegate.m */; };
 		6A87682724286C450077453E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A87682624286C450077453E /* ViewController.m */; };
 		6A87682A24286C450077453E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A87682824286C450077453E /* Main.storyboard */; };
@@ -121,6 +123,9 @@
 		6A74550F2444A031009FDF39 /* HMCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMCodeViewController.h; sourceTree = "<group>"; };
 		6A7455102444A031009FDF39 /* HMCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMCodeViewController.m; sourceTree = "<group>"; };
 		6A7455112444A031009FDF39 /* HMCodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HMCodeViewController.xib; sourceTree = "<group>"; };
+		6A74551724483224009FDF39 /* HMRetrievePassWordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMRetrievePassWordViewController.m; sourceTree = "<group>"; };
+		6A74551824483224009FDF39 /* HMRetrievePassWordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMRetrievePassWordViewController.h; sourceTree = "<group>"; };
+		6A74551924483224009FDF39 /* HMRetrievePassWordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HMRetrievePassWordViewController.xib; sourceTree = "<group>"; };
 		6A87681C24286C450077453E /* 智能体温计-管理版.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "智能体温计-管理版.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A87681F24286C450077453E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6A87682024286C450077453E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -444,6 +449,9 @@
 		6A876870242881440077453E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6A74551824483224009FDF39 /* HMRetrievePassWordViewController.h */,
+				6A74551724483224009FDF39 /* HMRetrievePassWordViewController.m */,
+				6A74551924483224009FDF39 /* HMRetrievePassWordViewController.xib */,
 				6A876873242881710077453E /* HMMineViewController.h */,
 				6A876874242881710077453E /* HMMineViewController.m */,
 				6A876875242881710077453E /* HMMineViewController.xib */,
@@ -546,6 +554,7 @@
 				6A5B0A25242A124000D13762 /* HMDayLiveTableViewCell.xib in Resources */,
 				6A72BF0F2434C8C0002657B3 /* HMAbnorTableViewCell.xib in Resources */,
 				6A87682C24286C470077453E /* Assets.xcassets in Resources */,
+				6A74551B24483224009FDF39 /* HMRetrievePassWordViewController.xib in Resources */,
 				6A7455132444A031009FDF39 /* HMCodeViewController.xib in Resources */,
 				6A876877242881710077453E /* HMMineViewController.xib in Resources */,
 				6A87689824289E4C0077453E /* HMLoginViewController.xib in Resources */,
@@ -647,6 +656,7 @@
 				6A876882242883870077453E /* HMTabBar.m in Sources */,
 				6A72BF1A2435B509002657B3 /* WMZDialog.m in Sources */,
 				6A8768AD2428EADD0077453E /* HMDayLiveViewController.m in Sources */,
+				6A74551A24483224009FDF39 /* HMRetrievePassWordViewController.m in Sources */,
 				6A87682124286C450077453E /* AppDelegate.m in Sources */,
 				6A876892242886C50077453E /* UIButton+YYButton.m in Sources */,
 				6A72BF0E2434C8C0002657B3 /* HMAbnorTableViewCell.m in Sources */,

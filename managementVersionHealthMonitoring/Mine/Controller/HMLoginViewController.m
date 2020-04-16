@@ -8,17 +8,20 @@
 
 #import "HMLoginViewController.h"
 #import "HMCodeViewController.h"
-
+#import "HMRetrievePassWordViewController.h"
 
 
 @interface HMLoginViewController ()<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *phoneTF;
 @property (weak, nonatomic) IBOutlet UITextField *pwdTF;
 @property (weak, nonatomic) IBOutlet UILabel *nextBtn;
+@property (weak, nonatomic) IBOutlet UILabel *regisLabel;
 
 @end
 
 @implementation HMLoginViewController
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,14 +35,20 @@
     self.nextBtn.layer.cornerRadius = 25;
     UITapGestureRecognizer *nextTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(nextBtnClick)];
     [self.nextBtn addGestureRecognizer:nextTap];
-    self.navigationController.navigationBarHidden = YES;
-  [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:19],NSFontAttributeName,[UIColor whiteColor],NSForegroundColorAttributeName, nil]];
+
+    [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:19],NSFontAttributeName,[UIColor whiteColor],NSForegroundColorAttributeName, nil]];
        [self.navigationController.navigationBar setBarTintColor:MaingreenColor];
-    
+    UITapGestureRecognizer *regisTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(regisSel)];
+    [self.regisLabel addGestureRecognizer:regisTap];
     self.title=@"智能体温计";
     self.navigationItem.leftBarButtonItem = nil;
     // 初始化设置
     [self setupBase];
+    self.regisLabel.hidden = YES;
+    NSInteger dayeInt = [self compareWithDate:@"2020-04-20"];
+    if (dayeInt == -1) {
+        self.regisLabel.hidden = NO;
+    }
 }
 - (void)backFirstPage{
     [YYNotificationCenter postNotificationName:@"switchTarBar" object:@"login"];
@@ -75,7 +84,7 @@
 
 - (void)loadlogin{
     
-    
+    [MyTool showHud];
     
     self.nextBtn.userInteractionEnabled = NO;
     NSString *url = [NSString stringWithFormat:@"%@/oauth/token",login_token_base_url];
@@ -105,6 +114,7 @@
      
         finished:^(id result, NSString *error) {
         YYLog(@"loadlogin==%@",result);
+        [MyTool dismissHud];
         if (error == nil) {
             [YYUserDefault setObject:[NSString stringWithFormat:@"%@ %@",result[@"token_type"],result[@"access_token"]] forKey:@"userToken"];
             [YYUserDefault setObject:[NSString stringWithFormat:@"%@",result[@"access_token"]] forKey:@"access_token"];
@@ -175,9 +185,38 @@
     
 }
 
+- (void)regisSel{
+    HMRetrievePassWordViewController *regisVC = [HMRetrievePassWordViewController new];
+    [self.navigationController pushViewController:regisVC animated:YES];
+}
+
+- (NSInteger)compareWithDate:(NSString*)bDate{
+    NSDateFormatter *formatter=[[NSDateFormatter alloc]init];
+    [formatter setDateFormat:@"yyyy-MM-dd"];
+    NSString*aDate=[formatter stringFromDate:[NSDate date]];
+    NSDateFormatter *dateformater = [[NSDateFormatter alloc] init];
+    [dateformater setDateFormat:@"yyyy-MM-dd"];
+    NSDate*dta = [[NSDate alloc]init];
+    NSDate*dtb = [[NSDate alloc]init];
+    dta = [dateformater dateFromString:aDate];
+    
+    dtb = [dateformater dateFromString:bDate];
+    NSComparisonResult result = [dta compare:dtb];
+    if (result == NSOrderedDescending) {
+        //指定时间 已过期
+        return 1;
+    }else if(result ==NSOrderedAscending){
+        // 没过期
+        return -1;
+    }else{
+        // 时间一样
+        return 0;
+    }
+}
 
 
 - (void)viewWillAppear:(BOOL)animated{
+    self.navigationController.navigationBarHidden = YES;
     if ([YYUserDefault objectForKey:@"userAccount"]  != nil) {
     NSDictionary *userAccount = [YYUserDefault objectForKey:@"userAccount"];
     self.phoneTF.text = userAccount[@"tel"];
