@@ -45,7 +45,7 @@
     // 初始化设置
     [self setupBase];
     self.regisLabel.hidden = YES;
-    NSInteger dayeInt = [self compareWithDate:@"2020-04-20"];
+    NSInteger dayeInt = [self compareWithDate:@"2020-04-18"];
     if (dayeInt == -1) {
         self.regisLabel.hidden = NO;
     }
